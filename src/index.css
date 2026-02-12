@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #C5A572;
+  --gold-light: #D4B896;
+  --gold-dark: #9B7E4F;
+  --silver: #B8B8B8;
+  --charcoal: #1a1a1a;
+  --charcoal-dark: #0f0f0f;
+  --charcoal-light: #2a2a2a;
+  --charcoal-lighter: #1f1f1f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* SIMPLE VISIBLE TEXTURE BACKGROUND */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0a0a;
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,.03) 2px, rgba(255,255,255,.03) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,.03) 2px, rgba(255,255,255,.03) 4px);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Add subtle spotlight gradients on top */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(197, 165, 114, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(197, 165, 114, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app {
+  position: relative;
+  z-index: 1;
+}
+
+/* FORCE LARGE LOGO - MULTIPLE METHODS */
+nav img,
+.logo img,
+img[alt*="BR Consultants"] {
+  height: 70px !important;
+  min-height: 70px !important;
+  max-height: 70px !important;
+  width: auto !important;
+  display: block !important;
+}
+
+@media (max-width: 768px) {
+  nav img,
+  .logo img,
+  img[alt*="BR Consultants"] {
+    height: 50px !important;
+    min-height: 50px !important;
+    max-height: 50px !important;
+  }
+}
+
+/* Color classes */
+.text-gold { color: var(--gold); }
+.text-gold-light { color: var(--gold-light); }
+.text-gold-dark { color: var(--gold-dark); }
+.text-silver { color: var(--silver); }
+.bg-gold { background-color: var(--gold); }
+.bg-gold-light { background-color: var(--gold-light); }
+.bg-charcoal { background-color: var(--charcoal); }
+.bg-charcoal-dark { background-color: var(--charcoal-dark); }
+.bg-charcoal-light { background-color: var(--charcoal-light); }
+.bg-charcoal-lighter { background-color: var(--charcoal-lighter); }
+.border-gold { border-color: var(--gold); }
+
+/* Font families */
+.font-serif {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--charcoal-dark); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-light); }
+
+/* Ensure sections have relative positioning */
+section {
+  position: relative;
+  z-index: 1;
+}
