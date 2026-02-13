@@ -46,9 +46,9 @@ function App() {
 
   return (
     <div className="app min-h-screen text-white">
-      {/* BIRMINGHAM BACKGROUND - Fixed on desktop, scrolls on mobile for iOS compatibility */}
+      {/* BIRMINGHAM BACKGROUND - Fixed on large desktop only, scrolls on mobile/tablet for iOS compatibility */}
       <div 
-        className="fixed inset-0 z-0 md:bg-fixed bg-scroll"
+        className="fixed inset-0 z-0 lg:bg-fixed bg-scroll"
         style={{
           backgroundImage: 'url(/birmingham_merged.png)',
           backgroundSize: 'cover',
