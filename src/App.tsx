@@ -35,6 +35,9 @@ function App() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
+    // Dispatch custom event to close any open modals
+    window.dispatchEvent(new Event('navigate'));
+    
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -52,15 +55,15 @@ function App() {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed',
-          opacity: 0.12
+          opacity: 0.20  // Increased from 0.12 for better visibility
         }}
       />
 
-      {/* Dark overlay for text contrast */}
+      {/* Dark overlay for text contrast - lightened to show background better */}
       <div 
         className="fixed inset-0 z-0"
         style={{
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.75) 100%)'
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.50) 50%, rgba(0,0,0,0.65) 100%)'
         }}
       />
 
@@ -71,6 +74,7 @@ function App() {
           <div className="container mx-auto px-6 py-3 flex justify-between items-center max-w-7xl">
             <button 
               onClick={() => scrollToSection('home')}
+              data-nav-link
               className="logo cursor-pointer hover:opacity-80 transition-opacity" 
               style={{ height: '70px', display: 'flex', alignItems: 'center' }}
             >
@@ -92,6 +96,7 @@ function App() {
                 <li key={section}>
                   <button
                     onClick={() => scrollToSection(section)}
+                    data-nav-link
                     className={`capitalize text-base font-medium tracking-wide transition-colors ${
                       activeSection === section ? 'text-gold' : 'text-gray-400 hover:text-gold'
                     }`}
@@ -199,7 +204,7 @@ function App() {
                 },
                 {
                   title: 'Leadership & Capability',
-                  outcome: 'You want: Leaders who can execute, not just strategize.',
+                  outcome: 'You want: Leaders who can execute, not just strategise.',
                   intro: 'We help you:',
                   points: [
                     'Develop commercial and operational muscle in your team',
@@ -339,7 +344,7 @@ function App() {
                   image: '/ranjit.jpg',
                   summary: 'Entrepreneurial and commercially astute. Known for setting up clear processes and operating rhythms that stick.',
                   points: [
-                    'Process improvement & throughput optimization in manufacturing',
+                    'Process improvement & throughput optimisation in manufacturing',
                     'Turnaround delivery & operational restructuring',
                     'Practical execution models without unnecessary complexity'
                   ],

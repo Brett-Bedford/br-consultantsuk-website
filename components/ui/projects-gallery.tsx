@@ -55,7 +55,7 @@ const projectData: ProjectItem[] = [
     outcome: "Response time -40% | Stock availability +25% | Complaints -60%",
     details: {
       challenge: "Customer satisfaction scores were declining with increasing complaints about service responsiveness and stock availability. The business lacked structured customer feedback mechanisms and struggled to translate customer needs into operational improvements.",
-      approach: "Launched a comprehensive market survey to identify specific pain points across the customer journey. Analyzed feedback to prioritize high-impact service improvements. Implemented targeted changes in service delivery, support processes, and stock management.",
+      approach: "Launched a comprehensive market survey to identify specific pain points across the customer journey. Analysed feedback to prioritise high-impact service improvements. Implemented targeted changes in service delivery, support processes, and stock management.",
       outcome: "Customer satisfaction scores improved significantly with measurable reductions in service complaints. Stock availability increased for high-demand items, and customer response times decreased by 40%. The business established a sustainable customer feedback mechanism that continues to drive continuous improvement.",
       metrics: [
         "Response time: -40%",
@@ -73,9 +73,9 @@ const projectData: ProjectItem[] = [
     image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1080&q=80",
     outcome: "Staff retention +35% | Placement rates +28%",
     details: {
-      challenge: "A recruitment business was experiencing high staff turnover, inconsistent placement rates, and unclear performance expectations. Consultants lacked structured coaching, and there was no standardized operating rhythm to drive accountability and results.",
+      challenge: "A recruitment business was experiencing high staff turnover, inconsistent placement rates, and unclear performance expectations. Consultants lacked structured coaching, and there was no standardised operating rhythm to drive accountability and results.",
       approach: "Conducted a thorough diagnostic to identify operational blockers affecting consultant performance. Introduced clear KPIs aligned to placement success, established weekly operating cadence with pipeline reviews, implemented structured coaching routines for skill development.",
-      outcome: "Staff retention improved by 35% within the first year. Consultant throughput increased as standardized processes reduced time-to-placement. Overall placement rates rose by 28%, and the business achieved more predictable revenue performance through improved pipeline management.",
+      outcome: "Staff retention improved by 35% within the first year. Consultant throughput increased as standardised processes reduced time-to-placement. Overall placement rates rose by 28%, and the business achieved more predictable revenue performance through improved pipeline management.",
       metrics: [
         "Staff retention: +35%",
         "Placement rates: +28%",
@@ -112,7 +112,7 @@ const projectData: ProjectItem[] = [
     outcome: "Pipeline £500k+ | 8 accounts recovered | Win rate +45%",
     details: {
       challenge: "The business had lost significant market share to competitors, resulting in approximately £500k in lost annual revenue. Market positioning was unclear, channel strategy was fragmented, and there was no focused account targeting or pipeline recovery plan.",
-      approach: "Developed a comprehensive market recovery strategy with sharpened value proposition and positioning. Identified and prioritized high-value target accounts for focused pursuit. Realigned channel strategy to concentrate resources on highest-potential routes to market.",
+      approach: "Developed a comprehensive market recovery strategy with sharpened value proposition and positioning. Identified and prioritised high-value target accounts for focused pursuit. Realigned channel strategy to concentrate resources on highest-potential routes to market.",
       outcome: "Successfully rebuilt pipeline with £500k+ in qualified opportunities within 6 months. Recovered key accounts previously lost to competition. Improved win rates through clearer positioning and focused execution.",
       metrics: [
         "Pipeline rebuilt: £500k+",
@@ -154,6 +154,20 @@ export const ProjectsGallery = () => {
       setIsModalOpen(true);
     }
   };
+
+  // Close modal when navigation occurs
+  useEffect(() => {
+    const handleCloseModal = () => {
+      setIsModalOpen(false);
+    };
+    
+    // Listen for custom navigation event
+    window.addEventListener('navigate', handleCloseModal);
+    
+    return () => {
+      window.removeEventListener('navigate', handleCloseModal);
+    };
+  }, []);
 
   return (
     <>
