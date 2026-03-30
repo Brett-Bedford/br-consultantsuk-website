@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SectionDivider } from '../components/ui/SectionDivider';
-import { ContactForm } from '../components/ui/ContactForm';
+import { PropertyEnquiryForm } from '../components/ui/PropertyEnquiryForm';
 import { PropertyCarousel } from '../components/ui/PropertyCarousel';
 
 function HMOPage() {
@@ -505,7 +505,7 @@ function HMOPage() {
                 </div>
               </div>
 
-              <ContactForm accent="teal" toEmail="properties@brconsultantsuk.com" />
+              <PropertyEnquiryForm />
             </div>
           </div>
         </section>
