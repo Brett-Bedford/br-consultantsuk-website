@@ -5,10 +5,25 @@ function LandingPage() {
 
   return (
     <div className="app min-h-screen text-white">
-      {/* Subtle texture background */}
-      <div className="fixed inset-0 z-0" style={{
-        background: 'linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(26,26,26,0.95) 50%, rgba(0,0,0,0.85) 100%)'
-      }} />
+      {/* BIRMINGHAM BACKGROUND - Fixed on large desktop only, scrolls on mobile/tablet for iOS compatibility */}
+      <div 
+        className="fixed inset-0 z-0 lg:bg-fixed bg-scroll"
+        style={{
+          backgroundImage: 'url(/birmingham_merged.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.20
+        }}
+      />
+
+      {/* Dark overlay for text contrast */}
+      <div 
+        className="fixed inset-0 z-0"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.50) 50%, rgba(0,0,0,0.65) 100%)'
+        }}
+      />
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col">
