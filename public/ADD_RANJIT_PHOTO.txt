@@ -1,0 +1,14 @@
+IMPORTANT: Add ranjit.jpg to this folder
+
+The website expects a file named "ranjit.jpg" in this public folder.
+
+Please add Ranjit's photo here with the filename: ranjit.jpg
+
+✅ Brett.jpg is already included
+❌ ranjit.jpg - NEEDS TO BE ADDED
+
+Both photos should be:
+- Professional headshots
+- Good quality (at least 800x1000 pixels)
+- JPEG format
+- Named exactly: ranjit.jpg

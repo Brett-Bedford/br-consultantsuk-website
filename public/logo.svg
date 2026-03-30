@@ -1,0 +1,13 @@
+<svg width="400" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer border -->
+  <rect x="5" y="5" width="390" height="110" fill="none" stroke="#C5A572" stroke-width="3"/>
+  
+  <!-- Inner border -->
+  <rect x="12" y="12" width="376" height="96" fill="none" stroke="#C5A572" stroke-width="1.5"/>
+  
+  <!-- BR text - moved up higher, slightly smaller -->
+  <text x="200" y="50" font-family="Georgia, serif" font-size="42" font-weight="bold" fill="#C5A572" text-anchor="middle" letter-spacing="6">BR</text>
+  
+  <!-- CONSULTANTS UK text - even larger, more prominent -->
+  <text x="200" y="85" font-family="Georgia, serif" font-size="22" font-weight="500" fill="#C5A572" text-anchor="middle" letter-spacing="8">CONSULTANTS UK</text>
+</svg>
